@@ -2,9 +2,9 @@
 - 👀 I’m interested in Cybersecurity
 - 🌱 I’m currently learning DSA with C++
 - 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me on my Linkedin profile
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+- 📫 Reach me on my Linkedin profile
+- 😄 Pronouns: He/Him
+- ⚡ Fun fact: One piece is real
 
 <!---
 omgupta9219/omgupta9219 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
