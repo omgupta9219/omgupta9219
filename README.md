@@ -1,12 +1,6 @@
-- 👋 Hi, I’m Om Gupta
-- 👀 I’m interested in Cybersecurity
-- 🌱 I’m currently learning DSA with C++
-- 💞️ I’m looking to collaborate on ...
-- 📫 Reach me on my Linkedin profile
-- 😄 Pronouns: He/Him
-- ⚡ Fun fact: One piece is real
-
-<!---
-omgupta9219/omgupta9219 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+💻 Aspiring Software Engineer | Java & Angular Developer | Cybersecurity Enthusiast  
+🌱 Currently building a Job Portal using Angular & Spring Boot  
+🔐 Passionate about clean code, secure development, and problem-solving  
+🚀 Tech Stack: Java | Spring Boot | Angular | C++ | MySQL | Linux | Git  
+🎓 B.Tech CSE @ GL Bajaj, Mathura | Class of 2027  
+📬 omgupta9219@gmail.com | 🌐 omgupta.me (if available)
