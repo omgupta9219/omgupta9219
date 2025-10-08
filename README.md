@@ -16,4 +16,4 @@
 - 🧠 Hands-on API & open-source experience  
 - 💻 Active participant in global developer events  
 - 🚀 Constantly learning and improving through community contributions
-https://assets.holopin.io/hf2025levels/lvl0-human.webp
+
