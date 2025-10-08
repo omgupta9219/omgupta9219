@@ -1,4 +1,4 @@
-## 🏅 Certifications & Badges
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/eef96b15-ef85-4063-9f07-40bfc1ee25b1" />## 🏅 Certifications & Badges
 
 ### 🎓 Postman Student Expert
 [![Postman Student Expert](https://api.badgr.io/public/badges/G0U1YVeOSdGAiytb9Yw6_w/image)](https://badgr.com/public/assertions/oahlQcXGS-GzwT7kHIbbWA?identity__email=omgupta9219%40gmail.com)
@@ -16,3 +16,4 @@
 - 🧠 Hands-on API & open-source experience  
 - 💻 Active participant in global developer events  
 - 🚀 Constantly learning and improving through community contributions
+https://assets.holopin.io/hf2025levels/lvl0-human.webp
