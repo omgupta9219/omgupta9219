@@ -2,6 +2,9 @@ name: GitHub Snake Game
 
 
 
+permissions:
+  contents: write   # ✅ add this line to allow push access
+
 on:
 
   # Schedule the workflow to run daily at midnight UTC
