@@ -2,17 +2,17 @@ name: Snake + Auto Daily Commit
 
 on:
   schedule:
-    - cron: "0 0 * * *"      # Snake update daily at 12 AM
-    - cron: "0 5 * * *"      # Auto commit daily at 5 AM
-  workflow_dispatch:          # Allow manual run
+    - cron: "0 0 * * *"      # Snake at midnight
+    - cron: "0 5 * * *"      # Auto commit at 5 AM
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  snake:
-    runs-on: ubuntu-latest
 
+  snake_job:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -24,33 +24,32 @@ jobs:
           outputs: |
             ./output/github-snake-dark.svg?palette=github-dark
 
-      - name: Push Snake to Output Branch
+      - name: Push snake files
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "Update Snake Animation"
+          commit_message: "Update Snake"
           branch: output
 
 
-  auto_commit:
+  auto_commit_job:
     runs-on: ubuntu-latest
-    needs: snake      # First snake runs, then auto commit will run
-
+    needs: snake_job      # ← THIS LINE makes jobs run one-after-another (NO FAIL)
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Auto Daily Commit
+      - name: Daily Auto Commit
         run: |
-          echo "Auto commit on $(date)" >> daily-commit-log.txt
+          echo "Auto update on $(date)" >> daily-commit-log.txt
 
-      - name: Git Commit & Push
+      - name: Commit and Push
         run: |
           git config --global user.email "omgupta9219@gmail.com"
           git config --global user.name "Om Gupta"
           git add .
-          git commit -m "Daily auto commit [skip ci]" || echo "Nothing to commit"
+          git commit -m "Daily auto commit [skip ci]" || echo "No changes"
 
-      - name: Push Code
+      - name: Push to main
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
