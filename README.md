@@ -15,7 +15,6 @@
 
 # 💻 Tech Stack:
 <p align="center">
-  
 <img src="https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E"/>
 <img src="https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white"/>
 <img src="https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
@@ -44,4 +43,10 @@
 <p align="center">
   <img src="https://github-contributor-stats.vercel.app/api?username=omgupta9219&limit=5&theme=vue-dark&combine_all_yearly_contributions=true"/>
 </p>
-![snake gif](https://github.com/omgupta9219/omgupta9219/blob/output/github-snake.svg)
+
+---
+
+# 🐍 GitHub Snake  
+<p align="center">
+  <img src="https://raw.githubusercontent.com/omgupta9219/omgupta9219/output/github-snake-dark.svg" />
+</p>
