@@ -1,0 +1,57 @@
+name: Snake + Auto Daily Commit
+
+on:
+  schedule:
+    - cron: "0 0 * * *"      # Snake update daily at 12 AM
+    - cron: "0 5 * * *"      # Auto commit daily at 5 AM
+  workflow_dispatch:          # Allow manual run
+
+permissions:
+  contents: write
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Generate Snake Animation
+        uses: Platane/snk@v3
+        with:
+          github_user_name: omgupta9219
+          outputs: |
+            ./output/github-snake-dark.svg?palette=github-dark
+
+      - name: Push Snake to Output Branch
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "Update Snake Animation"
+          branch: output
+
+
+  auto_commit:
+    runs-on: ubuntu-latest
+    needs: snake      # First snake runs, then auto commit will run
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Auto Daily Commit
+        run: |
+          echo "Auto commit on $(date)" >> daily-commit-log.txt
+
+      - name: Git Commit & Push
+        run: |
+          git config --global user.email "omgupta9219@gmail.com"
+          git config --global user.name "Om Gupta"
+          git add .
+          git commit -m "Daily auto commit [skip ci]" || echo "Nothing to commit"
+
+      - name: Push Code
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
