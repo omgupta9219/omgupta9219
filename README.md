@@ -18,3 +18,4 @@
 - 🚀 Constantly learning and improving through community contributions
 
 https://assets.holopin.io/hf2025levels/lvl0-human.webp
+![snake gif](https://github.com/omgupta9219/omgupta9219/blob/output/github-snake-dark.svg)
