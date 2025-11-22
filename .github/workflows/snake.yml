@@ -1,56 +1,98 @@
-name: Snake + Auto Daily Commit
+name: GitHub Snake Game
+
+
 
 on:
+
+  # Schedule the workflow to run daily at midnight UTC
+
   schedule:
-    - cron: "0 0 * * *"      # Snake at midnight
-    - cron: "0 5 * * *"      # Auto commit at 5 AM
+
+    - cron: "0 0 * * *"
+
+
+
+  # Allow manual triggering of the workflow
+
   workflow_dispatch:
 
-permissions:
-  contents: write
+
+
+  # Trigger the workflow on pushes to the main branch
+
+  push:
+
+    branches:
+
+      - main
+
+
 
 jobs:
 
-  snake_job:
+  generate:
+
     runs-on: ubuntu-latest
+
+    timeout-minutes: 10
+
+
+
     steps:
-      - name: Checkout repository
+
+      # Step 1: Checkout the repository
+
+      - name: Checkout Repository
+
         uses: actions/checkout@v3
 
-      - name: Generate Snake Animation
+
+
+      # Step 2: Generate the snake animations
+
+      - name: Generate GitHub Contributions Snake Animations
+
         uses: Platane/snk@v3
+
         with:
-          github_user_name: omgupta9219
+
+          # GitHub username to generate the animation for
+
+          github_user_name: ${{ github.repository_owner }}
+
+
+
+          # Define the output files and their configurations
+
           outputs: |
-            ./output/github-snake-dark.svg?palette=github-dark
 
-      - name: Push snake files
-        uses: stefanzweifel/git-auto-commit-action@v4
+            dist/github-snake.svg
+
+            dist/github-snake-dark.svg?palette=github-dark
+
+            dist/ocean.gif?color_snake=orange&color_dots=#bfd6f6,#8dbdff,#64a1f4,#4b91f1,#3c7dd9
+
+        env:
+
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+
+      # Step 3: Deploy the generated files to the 'output' branch
+
+      - name: Deploy to Output Branch
+
+        uses: peaceiris/actions-gh-pages@v3
+
         with:
-          commit_message: "Update Snake"
-          branch: output
 
-
-  auto_commit_job:
-    runs-on: ubuntu-latest
-    needs: snake_job      # ← THIS LINE makes jobs run one-after-another (NO FAIL)
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Daily Auto Commit
-        run: |
-          echo "Auto update on $(date)" >> daily-commit-log.txt
-
-      - name: Commit and Push
-        run: |
-          git config --global user.email "omgupta9219@gmail.com"
-          git config --global user.name "Om Gupta"
-          git add .
-          git commit -m "Daily auto commit [skip ci]" || echo "No changes"
-
-      - name: Push to main
-        uses: ad-m/github-push-action@master
-        with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: main
+
+          publish_dir: ./dist
+
+          publish_branch: output
+
+          # Optionally, you can set a custom commit message
+
+          commit_message: "Update snake animation [skip ci]"
+
