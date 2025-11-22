@@ -48,5 +48,5 @@
 
 # 🐍 GitHub Snake  
 <p align="center">
-  <img src="https://raw.githubusercontent.com/omgupta9219/omgupta9219/output/github-snake-dark.svg" />
+  <img src="https://raw.githubusercontent.com/omgupta9219/omgupta9219/output/github-snake.svg" />
 </p>
