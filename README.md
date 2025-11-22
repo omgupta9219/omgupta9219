@@ -44,3 +44,4 @@
 <p align="center">
   <img src="https://github-contributor-stats.vercel.app/api?username=omgupta9219&limit=5&theme=vue-dark&combine_all_yearly_contributions=true"/>
 </p>
+![snake gif](https://github.com/omgupta9219/omgupta9219/blob/output/github-snake.svg)
